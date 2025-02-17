@@ -1,0 +1,28 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "name"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "faker": "person.fullName"
+    },
+    "role": {
+      "type": "string",
+      "faker": "person.jobtype"
+    },
+    "archetype": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "faker": "person.bio"
+    }
+  }
+}

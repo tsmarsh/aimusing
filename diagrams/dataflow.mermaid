@@ -1,0 +1,53 @@
+graph TD;
+    subgraph Restlette
+        Work
+        Scene
+        Character 
+        Event
+        Plot 
+        Style 
+    end
+
+    subgraph Storage
+        Primary --> CDC
+        CDC --> Kafka
+        Kafka --> Tokenizer
+        Tokenizer --> Vector
+    end
+
+    subgraph Graphlette
+        WorkGraph <--> SceneGraph
+        SceneGraph <--> EventGraph
+        EventGraph <--> CharacterGraph
+        WorkGraph <--> PlotGraph
+        WorkGraph <--> StyleGraph
+
+    end
+    
+
+    subgraph AI Processing
+        subgraph Checkers
+            Kafka --> NarrativeChecker
+            Kafka --> StyleChecker
+            Kafka --> PlotChecker
+        end
+        
+        Vector --> Checkers
+        Graphlette --> Checkers
+        
+        Checkers --> Superego
+
+        subgraph Specialists
+            Superego --> AI_SceneSpecialist
+            Superego --> AI_CharacterSpecialist
+            Superego --> AI_EventSpecialist
+        end
+    end
+    
+    Restlette --> Primary
+    Primary --> Graphlette
+
+    Specialists --> Restlette
+
+    AIMusingApp --> Restlette
+    AIMusingApp --> Graphlette

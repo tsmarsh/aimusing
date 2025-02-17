@@ -1,0 +1,24 @@
+{
+    "name": "@tailoredshapes/aimusing",
+    "version": "0.1.0",
+    "private": true,
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "cli",
+        "build": "tsc",
+        "config": "merminator -f diagrams/datamodel.mermaid",
+        "test": "vitest --run"
+    },
+    "dependencies": {
+        "@meshobj/cli": "0.2.0",
+        "@meshobj/merminator": "0.2.0",
+        "@pushcorn/hocon-parser": "^1.3.1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "openapi-client-axios": "^7.5.5",
+        "testcontainers": "^10.18.0",
+        "typescript": "^5.0.0",
+        "vitest": "^3.0.5"
+    }
+}

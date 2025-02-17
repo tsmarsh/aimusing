@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "title": {
+      "type": "string",
+      "faker": "book.title"
+    },
+    "genre": {
+      "type": "string",
+      "faker": "book.genre"
+    },
+    "author": {
+      "type": "string",
+      "faker": "book.author"
+    },
+    "style_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "timeline_id": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

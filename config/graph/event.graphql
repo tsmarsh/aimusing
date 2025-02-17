@@ -1,0 +1,104 @@
+scalar Date
+
+type Work {
+  title: String!
+  genre: String
+  author: String
+  style: Style
+  timeline: Timeline
+  id: ID
+  chapters: [Chapter]
+}
+
+type Chapter {
+  title: String!
+  order: Int
+  work: Work
+  id: ID
+  scenes: [Scene]
+}
+
+type Character {
+  name: String!
+  role: String
+  archetype: String
+  description: String
+  id: ID
+  characterNotes: [CharacterNote]
+}
+
+type CharacterNote {
+  character: Character
+  keywords: [String]
+  note: String!
+  id: ID
+}
+
+type CharacterEvent {
+  character: Character!
+  id: ID
+}
+
+type Location {
+  name: String!
+  description: String
+  keywords: [String]
+  id: ID
+}
+
+type Plot {
+  name: String!
+  description: String
+  structure: String
+  id: ID
+  works: [Work]
+}
+
+type Style {
+  tone: String
+  voice: String
+  literaryInfluences: [String]
+  pacing: String
+  id: ID
+  works: [Work]
+  scenes: [Scene]
+}
+
+type Query {
+  getByName(name: String, at: Float): Event
+  getById(id: ID, at: Float): Event
+  getByLocation(id: ID, at: Float): [Event]
+  getByTimeline(id: ID, at: Float): [Event]
+}
+
+type Event {
+  name: String!
+  description: String
+  eventDate: Date
+  type: String
+  timeline: Timeline
+  location: Location
+  id: ID
+  characterEvents: [CharacterEvent]
+  sceneEvents: [SceneEvent]
+}
+
+type SceneEvent {
+  chapter: Chapter
+  id: ID
+}
+
+type Scene {
+  title: String!
+  summary: String
+  location: String
+  characters: [Character]
+  chapter: Chapter
+  id: ID
+}
+
+type Timeline {
+  name: String!
+  id: ID
+  works: [Work]
+}

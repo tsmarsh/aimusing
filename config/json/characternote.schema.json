@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "note"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "character_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "faker": "word.adjective"
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}

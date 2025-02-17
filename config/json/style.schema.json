@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [],
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "tone": {
+      "type": "string"
+    },
+    "voice": {
+      "type": "string"
+    },
+    "literaryInfluences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pacing": {
+      "type": "string"
+    }
+  }
+}
